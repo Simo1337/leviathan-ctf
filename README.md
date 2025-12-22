@@ -1,11 +1,11 @@
 # 📌 leviathan-ctf
 
 ## 💻 | What's leviathan ctf? | 💻
-</> | This is a beginner CTF for introducing people to Reverse Engineering CTFs
+</> | This is a beginner CTF for introducing people to Reverse Engineering CTFs<br>
 </> | I enjoyed it so I wanted to make my attempt public
 
 ## ℹ️ | Infos | ℹ️
-ⓘ | Link: https://overthewire.org/wargames/leviathan/
+ⓘ | Link: https://overthewire.org/wargames/leviathan/<br>
 ⓘ | To start run `ssh leviathan0@leviathan.overthewire.org -p 2223`
 
 ## 📝 | Levels | 📝
