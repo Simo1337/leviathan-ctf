@@ -4,6 +4,11 @@
 </> | This is a beginner CTF for introducing people to Reverse Engineering CTFs<br>
 </> | I enjoyed it so I wanted to make my attempt public
 
+## ⚠️ | DISCLAIMER | ⚠️
+❗ | Before reading this you should try the challenge yourself, there's no point in just copying this guide. <br>
+❗ | I posted these because I think some solutions are not the canon ones, you should also try to find your own!<br>
+❗ | To Overthewire.org: I hope you won't get mad to me for posting this!
+
 ## ℹ️ | Infos | ℹ️
 ⓘ | Link: https://overthewire.org/wargames/leviathan/<br>
 ⓘ | To start run `ssh leviathan0@leviathan.labs.overthewire.org -p 2223`
