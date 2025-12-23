@@ -61,3 +61,11 @@ This challeng is built on 7 levels.
 3. Inside that we see an executable called `bin`.
 4. We run it and we get `00110000 01100100 01111001 01111000 01010100 00110111 01000110 00110100 01010001 01000100 00001010` which converted to ASCII/UTF-8 is: `0dyxT7F4QD`.
 5. We found what we were looking for.
+
+### 👾 | Level 5->6 | 👾
+1. This time we have a file called `leviathan5` inside our `$HOME`.
+2. If we run it we get `Cannot open /tmp/file.log` and it returns, well let's create that file then with `touch /tmp/file.log`
+3. We run `leviathan5` again and we get nothing.
+4. We try with `ltrace ./leviathan5` and we can confirm it is actually reading that file with `leviathan6` id
+5. What if we link `/etc/leviathan_pass/leviathan6` to `/tmp/file.log`?
+6. The answer is: we get the `leviathan6` password `szo7HDB88w`!  
