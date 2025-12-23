@@ -69,3 +69,34 @@ This challeng is built on 7 levels.
 4. We try with `ltrace ./leviathan5` and we can confirm it is actually reading that file with `leviathan6` id
 5. What if we link `/etc/leviathan_pass/leviathan6` to `/tmp/file.log`?
 6. The answer is: we get the `leviathan6` password `szo7HDB88w`!  
+
+### 👾 | Level 6->7 | 👾
+1. In this level we need to guess a four digit number, in these cases I suggest always run the file inside `gdb`.
+2. Let's look at the ASM code:
+   ```
+   8049212:       e8 89 fe ff ff          call   80490a0 <atoi@plt>
+   8049217:       83 c4 10                add    $0x10,%esp
+   804921a:       39 45 f4                cmp    %eax,-0xc(%ebp)
+   804921d:       75 2b                   jne    804924a <main+0x84>
+   804921f:       e8 2c fe ff ff          call   8049050 <geteuid@plt>
+   8049224:       89 c3                   mov    %eax,%ebx
+   8049226:       e8 25 fe ff ff          call   8049050 <geteuid@plt>
+   804922b:       83 ec 08                sub    $0x8,%esp
+   804922e:       53                      push   %ebx
+   804922f:       50                      push   %eax
+   8049230:       e8 5b fe ff ff          call   8049090 <setreuid@plt>
+   8049235:       83 c4 10                add    $0x10,%esp
+   8049238:       83 ec 0c                sub    $0xc,%esp
+   804923b:       68 22 a0 04 08          push   $0x804a022
+   8049240:       e8 2b fe ff ff          call   8049070 <system@plt>
+   8049245:       83 c4 10                add    $0x10,%esp
+   8049248:       eb 10                   jmp    804925a <main+0x94>
+   804924a:       83 ec 0c                sub    $0xc,%esp
+   804924d:       68 2a a0 04 08          push   $0x804a02a
+   8049252:       e8 09 fe ff ff          call   8049060 <puts@plt>
+   ```
+3. We notice that our input inside `%EAX` is being compared with whatever is at the address `$EBP-0xc`.
+4. We can take a look at that address inside `gdb` adding a breakpoint before the `cmp` and run `x $ebp-0xc`.
+5. We then get: `7123` which is the correct guess.
+6. Now we run `leviathan6` in our shell and we get a new shell under `leviathan7` id.
+7. At this point, as always, we can run `cat /etc/leviathan_pass/leviathan7` and get: `qEs5Io5yM8`!
