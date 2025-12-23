@@ -44,3 +44,13 @@ This challeng is built on 7 levels.
     ```
 11. We are trying to change the link after the check is made.
 12. We run `./printfile /tmp/tempFolder/fileLink` and finally, between some random prints, we get the leviathan3 pass: `f0n8h2iWLP`!
+
+### 👾 | Level 3->4 | 👾
+1. As always we check the directory with `ls -alh` and we see that there's a file called `level3` which is executable and owned by `leviathan4`.
+2. Let's run it, we get asked for a password, we just input something random and, ofc nothing happens.
+3. Now run `objdump -d level3` and check for a `strcmp`, it's easy to find it under the `do_stuff` function.
+4. We also notice that there's a call to `system()` so we will probably get a shell or run something from `/bin/`.
+5. Let's run `level3` under `ltrace` and there's our secret password: `snlprintf`.
+6. We input it and, as we expected, get a shell.
+7. If we run `id` we can confirm `uid=leviathan4`.
+8. Now we can easily run `cat /etc/leviathan_pass/leviathan4` and get: `WG1egElCvO`!
