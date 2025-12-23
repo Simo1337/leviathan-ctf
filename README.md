@@ -54,3 +54,10 @@ This challeng is built on 7 levels.
 6. We input it and, as we expected, get a shell.
 7. If we run `id` we can confirm `uid=leviathan4`.
 8. Now we can easily run `cat /etc/leviathan_pass/leviathan4` and get: `WG1egElCvO`!
+
+### 👾 | Level 4->5 | 👾
+1. This is really straight forward.
+2. We run `ls -alh` and find a hidden folder `.trash/`.
+3. Inside that we see an executable called `bin`.
+4. We run it and we get `00110000 01100100 01111001 01111000 01010100 00110111 01000110 00110100 01010001 01000100 00001010` which converted to ASCII/UTF-8 is: `0dyxT7F4QD`.
+5. We found what we were looking for.
